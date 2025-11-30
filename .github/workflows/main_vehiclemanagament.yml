@@ -34,7 +34,7 @@ jobs:
           dotnet ef migrations bundle --output efbundle
 
       - name: Run EF Migrations
-        run: ./efbundle --connection "${{secrets.DB_CONNECTION_STRING}}"
+        run: ./efbundle --connection '${{secrets.DB_CONNECTION_STRING}}'
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
