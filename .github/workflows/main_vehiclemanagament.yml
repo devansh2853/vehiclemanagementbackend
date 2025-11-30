@@ -30,7 +30,7 @@ jobs:
 
       - name: Create EF Migration bundle
         run: |
-          dotnet tool install --global dotnet-EF
+          dotnet tool install --global dotnet-ef
           dotnet ef migrations bundle --output efbundle
 
       - name: Run EF Migrations
