@@ -28,13 +28,13 @@ jobs:
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
-      - name: Create EF Migration bundle
-        run: |
-          dotnet tool install --global dotnet-ef
-          dotnet ef migrations bundle --output efbundle
+      # - name: Create EF Migration bundle
+      #   run: |
+      #     dotnet tool install --global dotnet-ef
+      #     dotnet ef migrations bundle --output efbundle
 
-      - name: Run EF Migrations
-        run: ./efbundle --connection '${{secrets.DB_CONNECTION_STRING}}'
+      # - name: Run EF Migrations
+      #   run: ./efbundle --connection '${{secrets.DB_CONNECTION_STRING}}'
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
