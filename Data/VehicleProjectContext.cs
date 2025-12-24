@@ -18,6 +18,5 @@ public class VehicleProjectContext : DbContext
     }
     public DbSet<Car> Cars {get; set;}
     public DbSet<VehicleType> VehicleTypes {get; set;}
-    // public DbSet<Product> Products { get; set; }
 
 }
