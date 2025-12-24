@@ -12,7 +12,8 @@ public class VehicleProjectContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<VehicleType>().HasData(
-            new VehicleType {Id = 1, Name = "Car"}
+            new VehicleType {Id = 1, Name = "Car"},
+            new VehicleType {Id = 2, Name = "Bus"}
         );
     }
     public DbSet<Car> Cars {get; set;}
