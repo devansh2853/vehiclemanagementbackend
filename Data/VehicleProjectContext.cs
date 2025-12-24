@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using Microsoft.EntityFrameworkCore;
 using VehicleProject.Models;
 
@@ -8,7 +9,14 @@ public class VehicleProjectContext : DbContext
     public VehicleProjectContext(DbContextOptions<VehicleProjectContext> options) : base(options) {
         
     }
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<VehicleType>().HasData(
+            new VehicleType {Id = 1, Name = "Car"}
+        );
+    }
     public DbSet<Car> Cars {get; set;}
+    public DbSet<VehicleType> VehicleTypes {get; set;}
     // public DbSet<Product> Products { get; set; }
 
 }

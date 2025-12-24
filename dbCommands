@@ -1,1 +1,2 @@
 use VehicleProject;
+SELECT name FROM sys.sql_logins;
